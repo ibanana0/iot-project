@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  /* Surfaces */
+  --bg-canvas: #08090D;       /* Obsidian deep background */
+  --bg-card: #12141D;         /* Structural surface 1 */
+  --bg-card-subtle: #0F1118;  /* Terminal & log container */
+  --border-card: #1F2332;     /* Subtle hairline 1px border */
+  --border-subtle: #1C1F2B;   /* Divider & container borders */
+
+  /* Typography */
+  --text-primary: #FAFAFA;    /* 84% ink - high contrast headings & values */
+  --text-secondary: #D4D4D8;  /* Body text & message logs */
+  --text-muted: #A1A1AA;      /* Card labels & secondary copy */
+  --text-tertiary: #71717A;   /* Timestamps, footnotes & captions */
+
+  /* Functional Accents */
+  --color-success: #30D158;   /* Apple System Mint / Safe & Ready */
+  --color-accent: #38BDF8;    /* Precision Blue / Sensors & Lid */
+  --color-telegram: #2AABEE;  /* Telegram Brand Blue */
+
+  /* Interactive Buttons */
+  --btn-open-bg: #151926;
+  --btn-open-border: #2563EB;
+  --btn-home-bg: #131C17;
+  --btn-home-border: #16A34A;
+}
+
+/* Mobile-native platform optimizations */
+html {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #08090D;
+  color: #FAFAFA;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  background-color: #08090D;
+  color: #FAFAFA;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+/* Safe Area Insets for notch and home bar */
+.safe-top {
+  padding-top: max(12px, env(safe-area-inset-top));
+}
+
+.safe-bottom {
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+}
+
+/* iOS Monospace */
+.font-mono-code {
+  font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Button & interactive press states */
+button, [role="button"], [role="switch"] {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Subtle custom scrollbar with momentum touch scrolling for terminal */
+.terminal-scroll {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #1F2332 transparent;
+}
+
+.terminal-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.terminal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: #1F2332;
+  border-radius: 4px;
+}
